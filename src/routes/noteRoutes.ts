@@ -45,22 +45,6 @@ noteRouter.post("/update/:noteId", async (req:Request, res:Response) => {
 })
 
 
-// archive a note
-noteRouter.put("/archive/:noteId", async (req:Request, res:Response) => {
-
-    const noteId = req.params.noteId;
-
-    //Get user id from request - this is set by checkToken middleware
-    const userId=req.headers['userId'] as string;
-
-    let noteResponse: MethodResponse = await NoteController.archiveNote(userId,noteId);
-    res.status(noteResponse.status).send({
-        responseMessage: noteResponse.responseMessage,
-        payload: noteResponse.payload
-    })
-})
-
-
 // get notes from noteId
 noteRouter.get("/get/:noteId", async (req:Request, res:Response) => {
 
@@ -69,7 +53,7 @@ noteRouter.get("/get/:noteId", async (req:Request, res:Response) => {
     //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
-    let noteResponse: MethodResponse = await NoteController.getNoteForUser(userId,noteId);
+    let noteResponse: MethodResponse = await NoteController.getNote(userId,noteId);
     res.status(noteResponse.status).send({
         responseMessage: noteResponse.responseMessage,
         payload: noteResponse.payload
@@ -84,7 +68,7 @@ noteRouter.get("/getAllNotes", async (req:Request, res:Response) => {
     //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
-    let noteResponse: MethodResponse = await NoteController.getAllNoteForUserId(userId);
+    let noteResponse: MethodResponse = await NoteController.getAllNotesList(userId);
     res.status(noteResponse.status).send({
         responseMessage: noteResponse.responseMessage,
         payload: noteResponse.payload
@@ -101,7 +85,7 @@ noteRouter.get("/getArchived", async (req:Request, res:Response) => {
     //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
-    let noteResponse: MethodResponse = await NoteController.getArchivedNoteForUser(userId);
+    let noteResponse: MethodResponse = await NoteController.getArchivedNoteList(userId);
     res.status(noteResponse.status).send({
         responseMessage: noteResponse.responseMessage,
         payload: noteResponse.payload
@@ -118,7 +102,23 @@ noteRouter.get("/getUnarchived", async (req:Request, res:Response) => {
     //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
-    let noteResponse: MethodResponse = await NoteController.getUnachivedNoteForUser(userId);
+    let noteResponse: MethodResponse = await NoteController.getUnachivedNoteList(userId);
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
+
+
+// archive a note
+noteRouter.put("/archive/:noteId", async (req:Request, res:Response) => {
+
+    const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+
+    let noteResponse: MethodResponse = await NoteController.archiveNote(userId,noteId);
     res.status(noteResponse.status).send({
         responseMessage: noteResponse.responseMessage,
         payload: noteResponse.payload
