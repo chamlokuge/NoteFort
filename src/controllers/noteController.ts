@@ -56,19 +56,6 @@ export class NoteController {
 
     }
 
-    public static async getNoteByUserId(userId: string): Promise<MethodResponse> {
-        try {
-            let notes = await Note.find({ user: userId})
-            if (notes == null){
-                return new MethodResponse(ResponseStatusCode.BadRequest, 'Note not found');
-            }
-            return new MethodResponse(ResponseStatusCode.Success, 'success', notes);
-        }
-        catch (why) {
-            return new MethodResponse(ResponseStatusCode.InternalError, why)
-        }
-    }
-
     public static async getAllNoteForUserId(userId: string): Promise<MethodResponse> {
         try {
             
