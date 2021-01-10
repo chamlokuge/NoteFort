@@ -17,17 +17,22 @@ Swagger link
 - 🔒 Archive note
 - 🔒 Unarchive note
 - 🔒 View all notes
-- 🔒 View all archived notes
+- 🔒 View all archived notes  
+- 🔒 View all unarchived notes
 
 ## Dependancies
-- Node v12.15.0 
+- Node v12.x.x or higher   
+- MongoDB v5.x.x or higher
 - Jest - Test framework
 
 ## How to Setup
 
-- Fork the reposiroty in the GitHub
-- Clone the project into your local computer
+- Fork the repository in the GitHub
+- Clone the project into your local computer  
+- Set up .env file in reference to .env.stub
 - Run following commands
     - `npm install`
     - `npm test`
-    - `npm start`
+    - `npm start`  
+    
+ ## 
