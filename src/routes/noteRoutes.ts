@@ -3,6 +3,7 @@ import { Request, Response, Router } from 'express';
 import { MethodResponse } from '../types/commonTypes';
 export const noteRouter: Router = Router();
 
+// add a new note
 noteRouter.post("/add", async (req : Request, res: Response) => {
 
     const content = req.body.content;
@@ -23,9 +24,33 @@ noteRouter.post("/add", async (req : Request, res: Response) => {
     
 })
 
+// update note
+noteRouter.post("/update/:noteId", async (req:Request, res:Response) => {
+
+    const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+    let content = req.body.content;
+
+    let noteResponse: MethodResponse = await NoteController.updateNote(
+        userId,
+        noteId,
+        content
+        );
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
+
+
+// archive a note
 noteRouter.put("/archive/:noteId", async (req:Request, res:Response) => {
 
     const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
 
     let noteResponse: MethodResponse = await NoteController.archiveNote(userId,noteId);
@@ -35,9 +60,13 @@ noteRouter.put("/archive/:noteId", async (req:Request, res:Response) => {
     })
 })
 
+
+// get notes from noteId
 noteRouter.get("/get/:noteId", async (req:Request, res:Response) => {
 
     const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
     let noteResponse: MethodResponse = await NoteController.getNoteForUser(userId,noteId);
@@ -47,9 +76,29 @@ noteRouter.get("/get/:noteId", async (req:Request, res:Response) => {
     })
 })
 
+
+// get all notes of a user
+// TODO: add pagination
+noteRouter.get("/getAllNotes", async (req:Request, res:Response) => {
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+    
+    let noteResponse: MethodResponse = await NoteController.getAllNoteForUserId(userId);
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
+
+
+// get all archived notes of a user
+// TODO: add pagination
 noteRouter.get("/getArchived", async (req:Request, res:Response) => {
 
     const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
     const userId=req.headers['userId'] as string;
     
     let noteResponse: MethodResponse = await NoteController.getArchivedNoteForUser(userId);
@@ -60,15 +109,37 @@ noteRouter.get("/getArchived", async (req:Request, res:Response) => {
 })
 
 
+// get all notArchived notes of a user
+// TODO: add pagination
+noteRouter.get("/getUnarchived", async (req:Request, res:Response) => {
 
-// noteRouter.delete("/deleteNote", isAuthenticated, async (request, response) => {
-//     let userId = request.params.userId;
-//     let noteResponse: MethodResponse = await NoteController.DeleteNoteByUserId(userId);
-//     response.status(noteResponse.status).send({
-//         responseMessage: noteResponse.responseMessage,
-//         payload: noteResponse.payload
-//     })
-// })
+    const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+    
+    let noteResponse: MethodResponse = await NoteController.getUnachivedNoteForUser(userId);
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
+
+
+// delete note
+noteRouter.delete("/delete/:noteId", async (req:Request, res:Response) => {
+
+    const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+
+    let noteResponse: MethodResponse = await NoteController.deleteNote(userId,noteId);
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
 
 
 

@@ -5,7 +5,8 @@ import { AuthenticationController } from './../controllers/authenticationControl
 
 export const loginRegistrationRouter: Router = Router();
 
-loginRegistrationRouter.post("/login", async (request, response) => {
+//user login
+  loginRegistrationRouter.post("/login", async (request, response) => {
     let email: string = String(request.body.email);
     let password: string = String(request.body.password);
 
@@ -20,6 +21,8 @@ loginRegistrationRouter.post("/login", async (request, response) => {
     
   })
 
+  
+  //register a user
   loginRegistrationRouter.post("/register", async (req :Request, res: Response) => {
 
     console.log(req.body);
