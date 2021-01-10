@@ -4,6 +4,10 @@ import { NoteParams } from '../types/noteParams';
 
 export class NoteController {
     
+    /**
+     * Process add note
+     * @param noteInfo: NoteParams
+     */
     public static async addNote(noteInfo: NoteParams): Promise<MethodResponse>{
         try{
 
@@ -26,6 +30,13 @@ export class NoteController {
         }
     }
 
+
+    /**
+     * Process update note
+     * @param userId
+     * @param noteId
+     * @param body
+     */
     public static async updateNote(userId: string,noteId:string|undefined,body:any){
         
         if(!noteId){
@@ -56,7 +67,47 @@ export class NoteController {
 
     }
 
-    public static async getAllNoteForUserId(userId: string): Promise<MethodResponse> {
+
+    /**
+     * Process getNote
+     * @param userId
+     * @param noteId
+     */
+    public static async getNote(userId: string,noteId:string|undefined){
+
+        if(!noteId){
+            return new MethodResponse(ResponseStatusCode.BadRequest, 'Invalid note id');
+        }
+
+        try{
+
+            let note = await Note.findOne({_id:noteId,userId: userId})
+
+            if (note){
+                
+                return new MethodResponse(ResponseStatusCode.Success, 'Note found',{note:note});
+            }
+            else{
+    
+                return new MethodResponse(ResponseStatusCode.NotFound, 'Note not found');
+            }
+        }
+        catch (e){
+
+            console.error(e);
+            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
+
+        }
+       
+
+    }
+
+
+    /**
+     * Process get note list for the user
+     * @param userId
+     */
+    public static async getAllNotesList(userId: string): Promise<MethodResponse> {
         try {
             
             let notes = await Note.find({userId: userId})
@@ -73,6 +124,72 @@ export class NoteController {
         }
     }
 
+
+    /**
+     * Process get archived list of notes for user
+     * @param userId
+     */
+    public static async getArchivedNoteList(userId: string){
+
+        try{
+
+            let notes = await Note.find({userId: userId,isArchived:true})
+
+            if (notes){
+                
+                return new MethodResponse(ResponseStatusCode.Success, 'Notes found',{notes:notes});
+            }
+            else{
+    
+                return new MethodResponse(ResponseStatusCode.NotFound, 'Notes not found');
+            }
+        }
+        catch (e){
+
+            console.error(e);
+            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
+
+        }
+       
+
+    }
+
+
+    /**
+     * Process get unarchived list of notes for user
+     * @param userId
+     */
+    public static async getUnachivedNoteList(userId: string){
+
+        try{
+
+            let notes = await Note.find({userId: userId,isArchived:false})
+
+            if (notes){
+                
+                return new MethodResponse(ResponseStatusCode.Success, 'Unarchived Notes found',{notes:notes});
+            }
+            else{
+    
+                return new MethodResponse(ResponseStatusCode.NotFound, 'Notes not found');
+            }
+        }
+        catch (e){
+
+            console.error(e);
+            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
+
+        }
+       
+
+    }
+
+
+    /**
+     * Process archived note 
+     * @param userId
+     * @param noteId
+     */
     public static async archiveNote(userId: string,noteId:string|undefined){
 
         if(!noteId){
@@ -103,6 +220,12 @@ export class NoteController {
 
     }
 
+
+    /**
+     * Process unarchived note 
+     * @param userId
+     * @param noteId
+     */
     public static async unArchiveNote(userId: string,noteId:string|undefined){
 
         if(!noteId){
@@ -133,86 +256,12 @@ export class NoteController {
 
     }
 
-    public static async getNoteForUser(userId: string,noteId:string|undefined){
 
-        if(!noteId){
-            return new MethodResponse(ResponseStatusCode.BadRequest, 'Invalid note id');
-        }
-
-        try{
-
-            let note = await Note.findOne({_id:noteId,userId: userId})
-
-            if (note){
-                
-                return new MethodResponse(ResponseStatusCode.Success, 'Note found',{note:note});
-            }
-            else{
-    
-                return new MethodResponse(ResponseStatusCode.NotFound, 'Note not found');
-            }
-        }
-        catch (e){
-
-            console.error(e);
-            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
-
-        }
-       
-
-    }
-
-    public static async getArchivedNoteForUser(userId: string){
-
-        try{
-
-            let notes = await Note.find({userId: userId,isArchived:true})
-
-            if (notes){
-                
-                return new MethodResponse(ResponseStatusCode.Success, 'Notes found',{notes:notes});
-            }
-            else{
-    
-                return new MethodResponse(ResponseStatusCode.NotFound, 'Notes not found');
-            }
-        }
-        catch (e){
-
-            console.error(e);
-            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
-
-        }
-       
-
-    }
-
-
-    public static async getUnachivedNoteForUser(userId: string){
-
-        try{
-
-            let notes = await Note.find({userId: userId,isArchived:false})
-
-            if (notes){
-                
-                return new MethodResponse(ResponseStatusCode.Success, 'Unarchived Notes found',{notes:notes});
-            }
-            else{
-    
-                return new MethodResponse(ResponseStatusCode.NotFound, 'Notes not found');
-            }
-        }
-        catch (e){
-
-            console.error(e);
-            return new MethodResponse(ResponseStatusCode.InternalError, 'Internal error');
-
-        }
-       
-
-    }
-
+    /**
+     * Process delete note 
+     * @param userId
+     * @param noteId
+     */
     public static async deleteNote(userId: string,noteId:string|undefined){
 
         if(!noteId){
