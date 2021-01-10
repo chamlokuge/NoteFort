@@ -6,8 +6,8 @@ export interface IGeneralUser extends Document {
     lastName: string,
     email: string,
     password: string,
-    userType: UserType,
-    uuid : string
+    userType?: UserType,
+    uuid : string,
   }
 
 const GeneralUserSchema: Schema = new Schema({
@@ -15,8 +15,13 @@ const GeneralUserSchema: Schema = new Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    userType: { type: UserType, required: true },
+    userType: { type: UserType, required: false },
     uuid: { type: String, required: true },
   })
+
+export interface Note{
+  id:string,
+
+}
   
   export default mongoose.model<IGeneralUser>('GeneralUser', GeneralUserSchema);
