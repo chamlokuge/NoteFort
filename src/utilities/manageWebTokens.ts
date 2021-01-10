@@ -6,6 +6,11 @@ import { JWTtokenCreateParameters, JWTtokenReturnParameters} from './../types/lo
 
 const kJwtexpireTime = 60 * 60 * 8;
 
+/**
+ * Process create token
+ * @param req request
+ * @param res response
+ */
 export async function createJWT(tokenParameters: JWTtokenCreateParameters): Promise<string> {
 
     let token;
@@ -13,7 +18,7 @@ export async function createJWT(tokenParameters: JWTtokenCreateParameters): Prom
         throw 'error'
     }
         else{
-          token= await jwt.sign({
+          token = await jwt.sign({
                     _id : tokenParameters._id,
                     email: tokenParameters.email,
                   }, process.env.JWT_SECRET!, { algorithm: 'HS512', expiresIn: kJwtexpireTime, header: { "typ": "JWT" } });
@@ -89,5 +94,4 @@ export function decodeJWT(token: string): any {
   }
 
 }
-
 
