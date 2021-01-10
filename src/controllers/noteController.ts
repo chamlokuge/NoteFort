@@ -234,7 +234,7 @@ export class NoteController {
 
         try{
 
-            let note = await Note.findOne({_id:noteId,userId: userId,isArchived:true})
+            let note = await Note.findOne({_id:noteId,userId: userId,isArchived:false})
 
             if (note){
                 
