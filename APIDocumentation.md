@@ -31,7 +31,7 @@ Add a new Note
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -59,7 +59,7 @@ Update existing note
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -86,7 +86,7 @@ Delete existing note
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -139,7 +139,7 @@ Get archived and unarchived note list
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -166,7 +166,7 @@ Archive a existing note
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -193,7 +193,7 @@ Un archive a archived note
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -219,7 +219,7 @@ Get archive note list
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -245,7 +245,7 @@ Get unarchive note list
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -276,7 +276,7 @@ Register a new user
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 
 <aside class="success">
@@ -302,7 +302,7 @@ Login to the system
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
 
 <aside class="success">
