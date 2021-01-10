@@ -1,4 +1,4 @@
-![badge](https://action-badges.now.sh/chamlokuge/assignment?action=test)
+![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)
 
 # Personal Note Manager
 
