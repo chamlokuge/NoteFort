@@ -125,6 +125,20 @@ noteRouter.put("/archive/:noteId", async (req:Request, res:Response) => {
     })
 })
 
+// unarchive a note
+noteRouter.put("/unarchive/:noteId", async (req:Request, res:Response) => {
+
+    const noteId = req.params.noteId;
+
+    //Get user id from request - this is set by checkToken middleware
+    const userId=req.headers['userId'] as string;
+
+    let noteResponse: MethodResponse = await NoteController.unArchiveNote(userId,noteId);
+    res.status(noteResponse.status).send({
+        responseMessage: noteResponse.responseMessage,
+        payload: noteResponse.payload
+    })
+})
 
 // delete note
 noteRouter.delete("/delete/:noteId", async (req:Request, res:Response) => {
