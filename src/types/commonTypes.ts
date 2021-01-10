@@ -10,7 +10,6 @@ export class MethodResponse {
 }
 
 export enum ResponseStatusCode{
-    Okay = 200,
     Success= 200,
     BadRequest = 400,
     Unauthorized = 401,
