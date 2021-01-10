@@ -5,7 +5,7 @@
 A secure, personal note managing backend application, built on Typescript. 📔 ✏️  
 
 ## API Documentation
-Swagger link
+https://app.swaggerhub.com/apis/chamlokuge/Test2/1.0.0
 
 ## Features
 
@@ -30,7 +30,7 @@ Swagger link
 
 - Fork the repository in the GitHub
 - Clone the project into your local computer  
-- Set up .env file in reference to .env.stub
+- Set up `.env` file in reference to `.env.stub`  
 - Run following commands
     - `npm install`
     - `npm test`
@@ -63,3 +63,11 @@ Swagger link
  - Clear Library API Definition  
  - Build-in Support for JavaScript Packaging     
 
+ ##  Improvements  
+   
+ - Large notes support  
+ - Enhanced security by encrypting notes of the user  
+ - Add audio clips, images, PDF documents as attachments  
+ - Add reminders for calender events  
+ - Add collaborations to other authorized users  
+ - Add pagination and caching to notes  
