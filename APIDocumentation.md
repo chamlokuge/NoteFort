@@ -36,7 +36,7 @@ Add a new Note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## post__notes_updateNote_ 🔒
@@ -64,7 +64,7 @@ Update existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## delete__notes_deleteNote_ 🔒
@@ -91,7 +91,7 @@ Delete existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## get__notes_getNote_ 🔒
@@ -118,7 +118,7 @@ Get a note by noteId and userId
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## get__notes_getAllNotesList_ 🔒
@@ -144,7 +144,7 @@ Get archived and unarchived note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## put__notes_archive_ 🔒
@@ -171,7 +171,7 @@ Archive a existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## put__notes_unArchive_ 🔒
@@ -198,7 +198,7 @@ Un archive a archived note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## get__notes_getArchiveNoteList_ 🔒
@@ -224,7 +224,7 @@ Get archive note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 ## get__notes_getUnArchiveNoteList_ 🔒
@@ -250,7 +250,7 @@ Get unarchive note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation does not require authentication
+This operation require authentication
 </aside>
 
 <h1 id="notemanager-auth">auth</h1>
