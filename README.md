@@ -62,4 +62,4 @@ Swagger link
  - ES6 Feature Support    
  - Clear Library API Definition  
  - Build-in Support for JavaScript Packaging     
- - Adding more fields to a scema is less time consuming 
+
