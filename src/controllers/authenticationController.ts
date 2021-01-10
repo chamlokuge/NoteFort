@@ -32,7 +32,7 @@ export class AuthenticationController{
                 _id : newUser._id,
                 email: newUser.email,
               });
-          return new MethodResponse(ResponseStatusCode.Okay, 'okay', jwtToken);
+          return new MethodResponse(ResponseStatusCode.Success, 'success', jwtToken);
             
         } catch (why) {
             console.error(why);
@@ -59,7 +59,7 @@ export class AuthenticationController{
               email: recordFromDB.email,
           });
 
-          return new MethodResponse(ResponseStatusCode.Okay, 'okay', jwtToken);
+          return new MethodResponse(ResponseStatusCode.Success, 'success', jwtToken);
          
         } catch (why) {
           return new MethodResponse(ResponseStatusCode.InternalError, why)
