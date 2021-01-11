@@ -1,5 +1,5 @@
-![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=chamlokuge_Thirdfort)
+<!--![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)-->
 
 # Personal Note Manager
 
