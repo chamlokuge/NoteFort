@@ -12,7 +12,7 @@ License: <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a
 
 ## API Documentation 📔
 
-## post__notes_addNote_ 🔒
+## addNote 🔒
 
 `POST /notes/addNote/`
 
@@ -24,22 +24,22 @@ Add a new Note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|content|query|string|false|none|
+|userId|header|string|true|none|
+|content|query|string|true|none|
 
 <h3 id="post__notes_addnote_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## post__notes_updateNote_ 🔒
+## updateNote 🔒
 
 `POST /notes/updateNote/`
 
@@ -51,9 +51,9 @@ Update existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|noteId|query|string|false|none|
-|content|query|string|false|none|
+|userId|header|string|true|none|
+|noteId|query|string|true|none|
+|content|query|string|true|none|
 
 <h3 id="post__notes_updatenote_-responses">Responses</h3>
 
@@ -64,10 +64,10 @@ Update existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## delete__notes_deleteNote_ 🔒
+## deleteNote 🔒
 
 `DELETE /notes/deleteNote/`
 
@@ -79,8 +79,8 @@ Delete existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|noteId|query|string|false|none|
+|userId|header|string|true|none|
+|noteId|query|string|true|none|
 
 <h3 id="delete__notes_deletenote_-responses">Responses</h3>
 
@@ -91,10 +91,10 @@ Delete existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## get__notes_getNote_ 🔒
+## getNote 🔒
 
 `GET /notes/getNote/`
 
@@ -106,8 +106,8 @@ Get a note by noteId and userId
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|noteId|query|string|false|none|
+|userId|header|string|true|none|
+|noteId|query|string|true|none|
 
 <h3 id="get__notes_getnote_-responses">Responses</h3>
 
@@ -118,10 +118,10 @@ Get a note by noteId and userId
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## get__notes_getAllNotesList_ 🔒
+## getAllNotesList 🔒
 
 `GET /notes/getAllNotesList/`
 
@@ -133,7 +133,7 @@ Get archived and unarchived note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
+|userId|header|string|true|none|
 
 <h3 id="get__notes_getallnoteslist_-responses">Responses</h3>
 
@@ -144,10 +144,10 @@ Get archived and unarchived note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## put__notes_archive_ 🔒
+## notes_archive 🔒
 
 `PUT /notes/archive/`
 
@@ -159,8 +159,8 @@ Archive a existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|noteId|query|string|false|none|
+|userId|header|string|true|none|
+|noteId|query|string|true|none|
 
 <h3 id="put__notes_archive_-responses">Responses</h3>
 
@@ -171,10 +171,10 @@ Archive a existing note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## put__notes_unArchive_ 🔒
+## notes_unArchive 🔒
 
 `PUT /notes/unArchive/`
 
@@ -186,8 +186,8 @@ Un archive a archived note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
-|noteId|query|string|false|none|
+|userId|header|string|true|none|
+|noteId|query|string|true|none|
 
 <h3 id="put__notes_unarchive_-responses">Responses</h3>
 
@@ -198,10 +198,10 @@ Un archive a archived note
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## get__notes_getArchiveNoteList_ 🔒
+## getArchiveNoteList 🔒
 
 `GET /notes/getArchiveNoteList/`
 
@@ -213,7 +213,7 @@ Get archive note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
+|userId|header|string|true|none|
 
 <h3 id="get__notes_getarchivenotelist_-responses">Responses</h3>
 
@@ -224,10 +224,10 @@ Get archive note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
-## get__notes_getUnArchiveNoteList_ 🔒
+## getUnArchiveNoteList 🔒
 
 `GET /notes/getUnArchiveNoteList/`
 
@@ -239,7 +239,7 @@ Get unarchive note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|false|none|
+|userId|header|string|true|none|
 
 <h3 id="get__notes_getunarchivenotelist_-responses">Responses</h3>
 
@@ -250,12 +250,12 @@ Get unarchive note list
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="success">
-This operation require authentication
+This operation requires authentication
 </aside>
 
 <h1 id="notemanager-auth">auth</h1>
 
-## post__auth_register_ 
+## auth_register  
 
 `POST /auth/register/`
 
@@ -267,10 +267,10 @@ Register a new user
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|email|query|string|false|none|
-|password|query|string|false|none|
-|firstName|query|string|false|none|
-|lastName|query|string|false|none|
+|email|query|string|true|none|
+|password|query|string|true|none|
+|firstName|query|string|true|none|
+|lastName|query|string|true|none|
 
 <h3 id="post__auth_register_-responses">Responses</h3>
 
@@ -283,7 +283,7 @@ Register a new user
 This operation does not require authentication
 </aside>
 
-## post__auth_login_
+## auth_login  
 
 `POST /auth/login/`
 
@@ -295,8 +295,8 @@ Login to the system
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|email|query|string|false|none|
-|password|query|string|false|none|
+|email|query|string|true|none|
+|password|query|string|true|none|
 
 <h3 id="post__auth_login_-responses">Responses</h3>
 
@@ -331,9 +331,9 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|_id|string|false|none|none|
-|userId|string|false|none|none|
-|content|string|false|none|none|
+|_id|string|true|none|none|
+|userId|string|true|none|none|
+|content|string|true|none|none|
 
 <h2 id="tocS_User">User</h2>
 <!-- backwards compatibility -->
@@ -357,9 +357,9 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|userId|string|false|none|none|
-|fistName|string|false|none|none|
-|lastName|string|false|none|none|
-|email|string|false|none|none|
-|password|string|false|none|none|
+|userId|string|true|none|none|
+|fistName|string|true|none|none|
+|lastName|string|true|none|none|
+|email|string|true|none|none|
+|password|string|true|none|none|
 
