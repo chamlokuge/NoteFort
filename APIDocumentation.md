@@ -12,7 +12,7 @@ License: <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a
 
 ## API Documentation 📔
 
-## addNote 🔒
+## Add Note 🔒
 
 `POST /notes/addNote/`
 
@@ -24,7 +24,7 @@ Add a new Note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |content|query|string|true|none|
 
 <h3 id="post__notes_addnote_-responses">Responses</h3>
@@ -39,7 +39,7 @@ Add a new Note
 This operation requires authentication
 </aside>
 
-## updateNote 🔒
+## Update Note 🔒
 
 `POST /notes/updateNote/`
 
@@ -51,23 +51,23 @@ Update existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |noteId|query|string|true|none|
 |content|query|string|true|none|
 
 <h3 id="post__notes_updatenote_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## deleteNote 🔒
+## Delete Note 🔒
 
 `DELETE /notes/deleteNote/`
 
@@ -79,22 +79,22 @@ Delete existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |noteId|query|string|true|none|
 
 <h3 id="delete__notes_deletenote_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## getNote 🔒
+## Get Note 🔒
 
 `GET /notes/getNote/`
 
@@ -106,22 +106,22 @@ Get a note by noteId and userId
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |noteId|query|string|true|none|
 
 <h3 id="get__notes_getnote_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## getAllNotesList 🔒
+## Get All Notes List 🔒
 
 `GET /notes/getAllNotesList/`
 
@@ -133,21 +133,21 @@ Get archived and unarchived note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 
 <h3 id="get__notes_getallnoteslist_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## notes_archive 🔒
+## Archive Note 🔒
 
 `PUT /notes/archive/`
 
@@ -159,22 +159,22 @@ Archive a existing note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |noteId|query|string|true|none|
 
 <h3 id="put__notes_archive_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## notes_unArchive 🔒
+## Unarchive Note 🔒
 
 `PUT /notes/unArchive/`
 
@@ -186,22 +186,22 @@ Un archive a archived note
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 |noteId|query|string|true|none|
 
 <h3 id="put__notes_unarchive_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## getArchiveNoteList 🔒
+## Get Archived Note List 🔒
 
 `GET /notes/getArchiveNoteList/`
 
@@ -213,21 +213,21 @@ Get archive note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 
 <h3 id="get__notes_getarchivenotelist_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
 </aside>
 
-## getUnArchiveNoteList 🔒
+## Get Unarchive Note List 🔒
 
 `GET /notes/getUnArchiveNoteList/`
 
@@ -239,15 +239,15 @@ Get unarchive note list
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|userId|header|string|true|none|
+|userId|header|string|true|from token|
 
 <h3 id="get__notes_getunarchivenotelist_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
 
 <aside class="success">
 This operation requires authentication
@@ -274,10 +274,10 @@ Register a new user
 
 <h3 id="post__auth_register_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|ResponseMessage|Payload|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|token|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|none|
 
 <aside class="success">
 This operation does not require authentication
@@ -300,10 +300,10 @@ Login to the system
 
 <h3 id="post__auth_login_-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
+|Status|Meaning|Description|
 |---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|None|
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 
 <aside class="success">
 This operation does not require authentication
@@ -329,11 +329,11 @@ This operation does not require authentication
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
+|Name|Type|Required|Description|
 |---|---|---|---|---|
-|_id|string|true|none|none|
-|userId|string|true|none|none|
-|content|string|true|none|none|
+|_id|string|true|none|
+|userId|string|true|none|
+|content|string|true|none|
 
 <h2 id="tocS_User">User</h2>
 <!-- backwards compatibility -->
@@ -355,11 +355,11 @@ This operation does not require authentication
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
+|Name|Type|Required|Description|
 |---|---|---|---|---|
-|userId|string|true|none|none|
-|fistName|string|true|none|none|
-|lastName|string|true|none|none|
-|email|string|true|none|none|
-|password|string|true|none|none|
+|userId|string|true|none|
+|fistName|string|true|none|
+|lastName|string|true|none|
+|email|string|true|none|
+|password|string|true|none|
 
