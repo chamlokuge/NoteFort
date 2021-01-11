@@ -7,8 +7,10 @@
 
 A secure, personal note managing backend application, built on Typescript. 📔 ✏️  
 
-## API Documentation
-https://app.swaggerhub.com/apis/chamlokuge/Test2/1.0.0
+## API Documentation  
+[See here for API Documentation](https://github.com/chamlokuge/Thirdfort/edit/main/APIDocumentation.md)  
+
+[See here for Swagger API Documentation](https://app.swaggerhub.com/apis/chamlokuge/Test2/1.0.0) 
 
 ## Features
 
