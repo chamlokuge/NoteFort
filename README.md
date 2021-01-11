@@ -1,5 +1,7 @@
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=chamlokuge_Thirdfort&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=chamlokuge_Thirdfort)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=chamlokuge_Thirdfort&metric=bugs)](https://sonarcloud.io/dashboard?id=chamlokuge_Thirdfort)  
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=chamlokuge_Thirdfort)
-<!--![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)-->
+<!--![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)-->  
 
 # Personal Note Manager
 
