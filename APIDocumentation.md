@@ -29,11 +29,11 @@ Add a new Note
 
 <h3 id="post__notes_addnote_-responses">Responses</h3>
 
-|Status|Meaning|Description|
-|---|---|---|---|
-|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
+|Status|Meaning|Description|  
+|---|---|---|  
+|200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|  
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|  
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|  
 
 <aside class="success">
 This operation requires authentication
@@ -58,7 +58,7 @@ Update existing note
 <h3 id="post__notes_updatenote_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -85,7 +85,7 @@ Delete existing note
 <h3 id="delete__notes_deletenote_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -112,7 +112,7 @@ Get a note by noteId and userId
 <h3 id="get__notes_getnote_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -138,7 +138,7 @@ Get archived and unarchived note list
 <h3 id="get__notes_getallnoteslist_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -165,7 +165,7 @@ Archive a existing note
 <h3 id="put__notes_archive_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -192,7 +192,7 @@ Un archive a archived note
 <h3 id="put__notes_unarchive_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -218,7 +218,7 @@ Get archive note list
 <h3 id="get__notes_getarchivenotelist_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -244,7 +244,7 @@ Get unarchive note list
 <h3 id="get__notes_getunarchivenotelist_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|
@@ -301,7 +301,7 @@ Login to the system
 <h3 id="post__auth_login_-responses">Responses</h3>
 
 |Status|Meaning|Description|
-|---|---|---|---|
+|---|---|---|
 |200|[Success](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|BadRequest|
 
@@ -330,7 +330,7 @@ This operation does not require authentication
 ### Properties
 
 |Name|Type|Required|Description|
-|---|---|---|---|---|
+|---|---|---|---|
 |_id|string|true|none|
 |userId|string|true|none|
 |content|string|true|none|
@@ -356,7 +356,7 @@ This operation does not require authentication
 ### Properties
 
 |Name|Type|Required|Description|
-|---|---|---|---|---|
+|---|---|---|---|
 |userId|string|true|none|
 |fistName|string|true|none|
 |lastName|string|true|none|
