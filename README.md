@@ -3,9 +3,9 @@
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=chamlokuge_Thirdfort)
 <!--![badge](https://action-badges.now.sh/chamlokuge/thirdfort?action=build)-->  
 
-# Personal Note Manager
+# NoteFort 🏰🔒 
 
-A secure, personal note managing backend application, built on Typescript. 📔 ✏️  
+A place where your notes are secure and safe. 📔 ✏️  
 
 ## API Documentation  
 [See here for API Documentation](APIDocumentation.md)  
